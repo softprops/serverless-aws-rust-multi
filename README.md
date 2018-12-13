@@ -1,6 +1,6 @@
 # serverless AWS Rust multi-fuction template
 
-A sample template for bootstraping a multi function [Rustlang AWS Lambda](https://github.com/awslabs/aws-lambda-rust-runtime/) applications with ⚡ serverless framework ⚡.
+A sample template for bootstraping a multi function [Rustlang AWS Lambda](https://github.com/awslabs/aws-lambda-rust-runtime/) applications with ⚡ serverless framework ⚡ using [Cargo workspaces](https://doc.rust-lang.org/1.30.0/book/second-edition/ch14-03-cargo-workspaces.html)
 
 ## ✨ features
 

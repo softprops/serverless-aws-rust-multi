@@ -1,2 +1,2 @@
 [workspace]
-members = ["serverless-aws-rust", "serverless-aws-rust-http"]
+members = ["hello", "world"]
