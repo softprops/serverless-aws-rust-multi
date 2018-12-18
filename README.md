@@ -17,7 +17,7 @@ Install the [serverless framework](https://serverless.com/framework/) cli.
 Then then run the following in your terminal
 
 ```bash
-$ serverless install \
+$ npx serverless install \
   --url https://github.com/softprops/serverless-aws-rust-multi \
   --name my-new-multi-func-app
 ```
@@ -33,7 +33,7 @@ in a profile named "prod", you could impress your friends by creating a project
 that is _born_ in production.
 
 ```bash
-$ serverless install \
+$ npx serverless install \
   --url https://github.com/softprops/serverless-aws-rust-multi \
   --name my-new-multi-func-app \
   && cd my-new-multi-func-app \
