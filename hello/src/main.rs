@@ -1,4 +1,4 @@
-use lambda::handler_fn;
+use lambda::{handler_fn, Context};
 use serde_json::Value;
 
 type Error = Box<dyn std::error::Error + Sync + Send + 'static>;
@@ -9,7 +9,7 @@ async fn main() -> Result<(), Error> {
     Ok(())
 }
 
-async fn hello(event: Value) -> Result<Value, Error> {
+async fn hello(event: Value, _: Context) -> Result<Value, Error> {
     Ok(event)
 }
 
@@ -24,7 +24,7 @@ mod tests {
             "answer": 42
         });
         assert_eq!(
-            hello(event.clone()).await.expect("expected Ok(_) value"),
+            hello(event.clone(), Context::default()).await.expect("expected Ok(_) value"),
             event
         )
     }
