@@ -1,4 +1,4 @@
-use lambda_http::{handler, lambda, IntoResponse, Request};
+use lambda_http::{handler, lambda, IntoResponse, Request, Context};
 use serde_json::json;
 
 type Error = Box<dyn std::error::Error + Sync + Send + 'static>;
@@ -9,7 +9,7 @@ async fn main() -> Result<(), Error> {
     Ok(())
 }
 
-async fn world(_: Request) -> Result<impl IntoResponse, Error> {
+async fn world(_: Request, _: Context) -> Result<impl IntoResponse, Error> {
     // `serde_json::Values` impl `IntoResponse` by default
     // creating an application/json response
     Ok(json!({
@@ -28,7 +28,7 @@ mod tests {
         "message": "Go Serverless v1.0! Your function executed successfully!"
         })
         .into_response();
-        let response = world(request)
+        let response = world(request, Context::default())
             .await
             .expect("expected Ok(_) value")
             .into_response();
