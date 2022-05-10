@@ -5,5 +5,5 @@ edition = "2018"
 
 [dependencies]
 tokio = { version = "0.2", features = ["macros"] }
-lambda = { git = "https://github.com/awslabs/aws-lambda-rust-runtime/", branch = "master"}
+lambda = { git = "https://github.com/awslabs/aws-lambda-rust-runtime/", branch = "main"}
 serde_json = "1.0"
