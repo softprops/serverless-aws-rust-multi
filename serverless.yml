@@ -102,3 +102,12 @@ functions:
 #     NewOutput:
 #       Description: "Description for the output"
 #       Value: "Some output value"
+
+custom:
+  # this section customizes of the default
+  # serverless-rust plugin settings
+  rust:
+    # custom docker tag
+    dockerTag: "0.4.0-rust-stable"
+    #  custom docker image
+    dockerImage: "rustserverless/lambda-rust"
