@@ -1,6 +1,7 @@
 {
+  "name": "serverless-aws-rust-multi",
   "devDependencies": {
-    "serverless": "^1.74.1",
-    "serverless-rust": "^0.3.8"
+    "serverless": "^3.38.0",
+    "serverless-rust": "github:softprops/serverless-rust#master"
   }
 }
