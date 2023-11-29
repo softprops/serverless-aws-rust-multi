@@ -10,7 +10,7 @@ jobs:
         uses: hecrj/setup-rust-action@v1
         with:
           components: rustfmt
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - run: cargo fmt --all -- --check
 
   lint:
@@ -20,7 +20,7 @@ jobs:
         uses: hecrj/setup-rust-action@v1
         with:
           components: clippy
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - run: cargo clippy --all-targets -- -D clippy::all
 
   compile:
@@ -28,7 +28,7 @@ jobs:
     steps:
       - name: Set up Rust
         uses: hecrj/setup-rust-action@v1
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - run: cargo check --all
 
   test:
@@ -38,7 +38,7 @@ jobs:
     - name: Setup Rust
       uses: hecrj/setup-rust-action@v1
     - name: Checkout
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
     - name: Test
       run: cargo test
   # deploy on pushes to master branch
@@ -54,7 +54,7 @@ jobs:
       - name: Set up Rust
         uses: hecrj/setup-rust-action@v1
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
       - name: Deploy
         if: env.AWS_ACCESS_KEY_ID && env.AWS_SECRET_ACCESS_KEY
         env:
