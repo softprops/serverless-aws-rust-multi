@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Set up Rust
-        uses: hecrj/setup-rust-action@v1
+        uses: hecrj/setup-rust-action@v2.0.0
         with:
           components: rustfmt
       - uses: actions/checkout@v4
@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Set up Rust
-        uses: hecrj/setup-rust-action@v1
+        uses: hecrj/setup-rust-action@v2.0.0
         with:
           components: clippy
       - uses: actions/checkout@v4
@@ -27,7 +27,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Set up Rust
-        uses: hecrj/setup-rust-action@v1
+        uses: hecrj/setup-rust-action@v2.0.0
       - uses: actions/checkout@v4
       - run: cargo check --all
 
@@ -36,7 +36,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Setup Rust
-      uses: hecrj/setup-rust-action@v1
+      uses: hecrj/setup-rust-action@v2.0.0
     - name: Checkout
       uses: actions/checkout@v4
     - name: Test
@@ -52,7 +52,7 @@ jobs:
     needs: [test]
     steps:
       - name: Set up Rust
-        uses: hecrj/setup-rust-action@v1
+        uses: hecrj/setup-rust-action@v2.0.0
       - name: Checkout
         uses: actions/checkout@v4
       - name: Deploy
