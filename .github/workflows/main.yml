@@ -7,28 +7,28 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Set up Rust
-        uses: hecrj/setup-rust-action@v1
+        uses: hecrj/setup-rust-action@v2.0.0
         with:
           components: rustfmt
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - run: cargo fmt --all -- --check
 
   lint:
     runs-on: ubuntu-latest
     steps:
       - name: Set up Rust
-        uses: hecrj/setup-rust-action@v1
+        uses: hecrj/setup-rust-action@v2.0.0
         with:
           components: clippy
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - run: cargo clippy --all-targets -- -D clippy::all
 
   compile:
     runs-on: ubuntu-latest
     steps:
       - name: Set up Rust
-        uses: hecrj/setup-rust-action@v1
-      - uses: actions/checkout@v2
+        uses: hecrj/setup-rust-action@v2.0.0
+      - uses: actions/checkout@v4
       - run: cargo check --all
 
   test:
@@ -36,9 +36,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Setup Rust
-      uses: hecrj/setup-rust-action@v1
+      uses: hecrj/setup-rust-action@v2.0.0
     - name: Checkout
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
     - name: Test
       run: cargo test
   # deploy on pushes to master branch
@@ -52,9 +52,9 @@ jobs:
     needs: [test]
     steps:
       - name: Set up Rust
-        uses: hecrj/setup-rust-action@v1
+        uses: hecrj/setup-rust-action@v2.0.0
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
       - name: Deploy
         if: env.AWS_ACCESS_KEY_ID && env.AWS_SECRET_ACCESS_KEY
         env:
